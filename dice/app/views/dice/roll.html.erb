@@ -1,0 +1,32 @@
+<h1>Dice Game</h1>
+
+<p>
+	<%= image_tag("https://uchicago.s3.amazonaws.com/d0#{@dice[0]}.png", :alt => "Your first die was a #{@dice[0]}") %>
+	<%= image_tag("https://uchicago.s3.amazonaws.com/d0#{@dice[1]}.png", :alt => "Your first die was a #{@dice[1]}") %>
+</p>
+
+<p> You rolled a <%= @sum %>.
+
+<% if not (@win or @lose) %>
+	<% if @goal==0 %>
+
+	<% else %>
+		Your goal is <%= @goal %>.
+	<% end %>
+		Roll it again before you roll a 7.
+		<div class="button"> <a href=<%="/roll?goal=#{@newgoal}"%>> Play again </a></div>
+
+
+<% else %>
+	</p>
+	<h2> You
+		<% if @win %>
+			win!
+		<% elsif @lose %>
+			lose :(
+		<% end %>
+	</h2>
+	<div class="button"> <a href='/roll?goal=0'> Play again </a></div>
+<% end %>
+
+
