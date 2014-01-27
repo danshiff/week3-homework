@@ -1,32 +1,42 @@
-<h1>Dice Game</h1>
+<!DOCTYPE html>
+<html>
+	<head>
+		<%= stylesheet_link_tag "style"%>
+		<title>Dice Game</title>		
+	</head>
 
-<p>
-	<%= image_tag("https://uchicago.s3.amazonaws.com/d0#{@dice[0]}.png", :alt => "Your first die was a #{@dice[0]}") %>
-	<%= image_tag("https://uchicago.s3.amazonaws.com/d0#{@dice[1]}.png", :alt => "Your first die was a #{@dice[1]}") %>
-</p>
+	<body>
+		<h1>Dice Game</h1>
 
-<p> You rolled a <%= @sum %>.
+		<p>
+			<%= image_tag("https://uchicago.s3.amazonaws.com/d0#{@dice[0]}.png", :alt => "Your first die was a #{@dice[0]}") %>
+			<%= image_tag("https://uchicago.s3.amazonaws.com/d0#{@dice[1]}.png", :alt => "Your first die was a #{@dice[1]}") %>
+		</p>
 
-<% if not (@win or @lose) %>
-	<% if @goal==0 %>
+		<p> You rolled a <%= @sum %>.
 
-	<% else %>
-		Your goal is <%= @goal %>.
-	<% end %>
-		Roll it again before you roll a 7.
-		<div class="button"> <a href=<%="/roll?goal=#{@newgoal}"%>> Play again </a></div>
+		<% if not (@win or @lose) %>
+			<% if @goal==0 %>
+
+			<% else %>
+				Your goal is <%= @goal %>.
+			<% end %>
+				Roll it again before you roll a 7.
+				<p> <a href=<%="/roll?goal=#{@newgoal}"%>> Roll Dice! </a></p>
 
 
-<% else %>
-	</p>
-	<h2> You
-		<% if @win %>
-			win!
-		<% elsif @lose %>
-			lose :(
+		<% else %>
+			</p>
+			<h2> You
+				<% if @win %>
+					win!
+				<% elsif @lose %>
+					lose :(
+				<% end %>
+			</h2>
+			<p> <a href='/roll?goal=0'> Play again </a></p>
 		<% end %>
-	</h2>
-	<div class="button"> <a href='/roll?goal=0'> Play again </a></div>
-<% end %>
+	</body>
+</html>
 
 

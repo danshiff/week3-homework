@@ -1,0 +1,22 @@
+body 	{font-family: Arial;
+		 font-size: 16pt;
+		 margin-left: 20px;
+		}
+
+h1		{font-size: 30pt;
+		 font-style: bold;
+		 padding-bottom: 40px;
+		 border-bottom: 1px solid black;
+		}
+
+h2		{font-size: 24pt;}
+
+
+a 		{
+		  padding: 15px;
+		  background: #1C6;
+		  text-align: center;
+		  border: 1px solid black;
+		  color: white;
+		  text-decoration: none;
+		}
