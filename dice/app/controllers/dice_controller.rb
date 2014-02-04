@@ -2,11 +2,13 @@ class DiceController < ApplicationController
 	
 	#Welcome Screen
 	def welcome
+		@title = "Dice Game Rules"
 		render "welcome"
 	end
 
 	#When the dice roll, we know a win or lose didn't just happen. 
 	def roll_dice
+		@title = "Dice Game"
 		@dice = [rand(6) + 1, rand(6) + 1]
 		@win = false
 		@lose = false
